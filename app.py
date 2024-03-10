@@ -58,6 +58,25 @@ def remove_punctuation(lst):
         if i not in lst1:
             count += 1
     return count
+def create_table_if_not_exists():
+    connection = connect_to_database()
+    cursor = connection.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS text_news (
+            id SERIAL PRIMARY KEY,
+            input_text TEXT NOT NULL,
+            num_sentences INTEGER NOT NULL
+            num_words INTEGER NOT NULL,
+            num_stop_words INTEGER NOT NULL,
+            upos_tag TEXT NOT NULL
+        )
+    """)
+    connection.commit()
+    connection.close()
+
+# Call this function before running the Flask app
+create_table_if_not_exists()
+
 
 @app.route('/',methods=['GET','POST'])
 def index():
