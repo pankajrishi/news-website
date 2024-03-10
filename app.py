@@ -4,6 +4,7 @@ import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from nltk.tag import pos_tag
+nltk.download('all')
 import psycopg2
 import requests
 from urllib.error import HTTPError
