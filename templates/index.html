@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>News Article Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Change height to min-height for better responsiveness */
+            background-image: url("https://wallpapercave.com/wp/wp9690089.jpg");
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; 
+            
+            background-color:rgba(0, 0, 0, 0.1);
+        }
+    
+
+        h1 {
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .forms-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .forms-container form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .github-login {
+            margin-top: 20px; /* Add margin to separate from other content */
+        
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 145px;
+            width: 179px;
+        }
+    </style>
+    
+</head>
+<body>
+    <img class="logo" src="https://tse4.mm.bing.net/th?id=OIP.2KObz2G4YfQ1RIYitFGHsgHaEK&pid=Api&P=0&h=180" alt="Logo">
+    
+    <div class="container">
+        
+        <h1>This website supports only India Today News link</h1>
+        <div class="forms-container">
+            <form method="post" action="/">
+                <label for="url">Enter URL:</label><br>
+                <input type="text" id="url" name="url"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+            {% if cleantext %}
+            <div class="analysis-result">
+                <h2>Analysis Result:</h2>
+                <p><strong>Clean Text:</strong> {{ cleantext }}</p>
+            </div>
+            {% endif %}
+            <form method="post" action="/view_data">
+                <label for="password">Enter Password to View Data:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="View Data">
+            </form>
+        </div>
+        <div class="github-login">
+            <a href="{{ url_for('github_login') }}">Login with GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+
+    <title>Analyzed Text</title>
+    <style>
+        .analysis-history{
+            background-image: url("https://media.istockphoto.com/id/1134202009/photo/newspaper-with-old-grunge-vintage-unreadable-paper-texture-background.webp?s=2048x2048&w=is&k=20&c=WP3b5RnpV-H73HP31BtqecP3S2BCh8S05c_WKYIgA-I=");
+           
+        }
+        th{
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+   
+{% if data %}
+<div class="analysis-history">
+    <h2>Analyzed History:</h2>
+    <table border="1">
+        <tr>
+            <th>Input Text</th>
+            <th>Number of Sentences</th>
+            <th>Number of Words</th>
+            <th>Number of Stop Words</th>
+            <th>Upos Count</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            
+            
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+</div>
+</body>
+</html>
