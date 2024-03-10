@@ -31,9 +31,9 @@ github = oauth.register(
 )
 
 DB_NAME = "news24"  # Update with your actual database name
-DB_USER = "postgres"
-DB_PASSWORD = "pk12112004"
-DB_HOST = "localhost"
+DB_USER = "news24_user"
+DB_PASSWORD = "DWPCmdYxVs4yp505uH7hXZ0vmaGWxROc"
+DB_HOST = "dpg-cnmkjv2cn0vc738elb40-a"
 
 VIEW_DATA_PASSWORD = "pk12112004"
 
