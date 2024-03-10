@@ -68,11 +68,11 @@ def create_table_if_not_exists():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS text_news (
             id SERIAL PRIMARY KEY,
-            input_text TEXT NOT NULL,
-            num_sentences INTEGER NOT NULL
-            num_words INTEGER NOT NULL,
-            num_stop_words INTEGER NOT NULL,
-            upos_tag TEXT NOT NULL
+            input_text TEXT,
+            num_sentences INTEGER,
+            num_words INTEGER,
+            num_stop_words INTEGERL,
+            upos_tag TEXT
         )
     """)
     connection.commit()
