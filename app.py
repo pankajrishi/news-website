@@ -15,6 +15,10 @@ app = Flask(__name__)
 
 oauth = OAuth(app)
 
+nltk.download('punkt')  # For word_tokenize and sent_tokenize
+nltk.download('stopwords')  # For stopwords
+nltk.download('averaged_perceptron_tagger')
+
 app.config['SECRET_KEY'] = "Pankaj"
 app.config['GITHUB_CLIENT_ID'] = "37b853ae7b5c2741647e"
 app.config['GITHUB_CLIENT_SECRET'] = "fe7aa41a6d561652f25ca34881d8604f165ee6a9"
