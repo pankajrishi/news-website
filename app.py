@@ -71,7 +71,7 @@ def create_table_if_not_exists():
             input_text TEXT,
             num_sentences INTEGER,
             num_words INTEGER,
-            num_stop_words INTEGERL,
+            num_stop_words INTEGER,
             upos_tag TEXT
         )
     """)
